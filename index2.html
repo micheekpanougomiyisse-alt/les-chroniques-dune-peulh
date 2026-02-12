@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Chroniques d’une Peulh</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat', sans-serif;
+    background:#f8f5ef;
+    color:#333;
+}
+
+/* NAVIGATION */
+nav{
+    position:fixed;
+    width:100%;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    padding:15px 0;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    z-index:1000;
+}
+
+nav a{
+    margin:0 20px;
+    text-decoration:none;
+    color:#444;
+    font-weight:600;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#8b6f47;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+    url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da') center/cover no-repeat;
+    color:white;
+}
+
+.hero h1{
+    font-family:'Playfair Display', serif;
+    font-size:3.5rem;
+    animation:fadeDown 1.5s ease;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:1.2rem;
+    width:70%;
+    animation:fadeUp 2s ease;
+}
+
+/* SECTIONS */
+section{
+    padding:100px 10%;
+}
+
+h2{
+    font-family:'Playfair Display', serif;
+    font-size:2.2rem;
+    margin-bottom:40px;
+    color:#8b6f47;
+}
+
+/* CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.05);
+    transition:0.4s;
+    opacity:0;
+    transform:translateY(40px);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* ABOUT */
+.about{
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    align-items:center;
+}
+
+.about img{
+    width:350px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* CONTACT */
+form input, form textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+button{
+    background:#8b6f47;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#6f5638;
+}
+
+/* FOOTER */
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* SCROLL EFFECT */
+.show{
+    opacity:1 !important;
+    transform:translateY(0) !important;
+    transition:1s ease;
+}
+
+@media(max-width:768px){
+    .hero h1{font-size:2.2rem;}
+    section{padding:80px 5%;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#chroniques">Chroniques</a>
+<a href="#about">À propos</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+<h1>Les Chroniques d’une Peulh</h1>
+<p>Je porte dans mes mots l’écho des plaines et le silence des traditions.</p>
+</div>
+
+<section id="chroniques">
+<h2>Dernières Chroniques</h2>
+<div class="grid">
+<div class="card">
+<h3>🌙 Le poids du silence</h3>
+<p>Dans certaines cultures, le silence protège autant qu’il enferme...</p>
+</div>
+<div class="card">
+<h3>❤️ Aimer sans se perdre</h3>
+<p>Peut-on aimer profondément sans effacer son identité ?</p>
+</div>
+<div class="card">
+<h3>🌍 Tradition & modernité</h3>
+<p>Marcher entre héritage et liberté demande du courage.</p>
+</div>
+</div>
+</section>
+
+<section id="about">
+<h2>À propos</h2>
+<div class="about">
+<img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="portrait">
+<p>
+Je suis une femme Peulh, héritière d’une culture forte et silencieuse.
+J’écris pour transmettre, questionner et inspirer.
+Chaque chronique est un pont entre tradition et modernité.
+</p>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<form>
+<input type="text" placeholder="Votre nom">
+<input type="email" placeholder="Votre email">
+<textarea rows="5" placeholder="Votre message"></textarea>
+<button>Envoyer</button>
+</form>
+</section>
+
+<footer>
+© 2026 Les Chroniques d’une Peulh — Tous droits réservés
+</footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+    const trigger = window.innerHeight * 0.85;
+    cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        if(top < trigger){
+            card.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
